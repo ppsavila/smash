@@ -11,7 +11,7 @@ export function renderLogin() {
       <div class="container container-sm">
         <div class="card fade-in">
           <div class="text-center mb-xl">
-            <h1 class="text-gradient">🎭 Carnaval</h1>
+            <h1 class="text-gradient">🎭 Smash</h1>
             <p class="text-secondary">Entre na sua conta</p>
           </div>
 

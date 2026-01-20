@@ -22,7 +22,7 @@ export async function renderDashboard() {
       <div class="navbar">
         <div class="container">
           <div class="navbar-content">
-            <div class="navbar-brand">🎭 Carnaval</div>
+            <div class="navbar-brand">🎭 Smash</div>
             <div class="navbar-menu">
               <button id="profile-btn" class="btn btn-ghost btn-sm">
                 ${currentUser?.photoURL ? `<img src="${currentUser.photoURL}" class="avatar avatar-sm" alt="${currentUser.name}" />` : '👤'}
@@ -41,7 +41,7 @@ export async function renderDashboard() {
 
           <div class="flex justify-between items-center mb-lg">
             <div>
-              <h1 class="page-title" style="margin-bottom: 0;">Minhas Ficadas</h1>
+              <h1 class="page-title" style="margin-bottom: 0;">Meus Hooks</h1>
               <p class="page-subtitle">Gerencie suas conexões</p>
             </div>
             
@@ -59,7 +59,7 @@ export async function renderDashboard() {
           <div class="grid grid-2 gap-md mb-xl">
              <button id="tab-ficadas" class="card card-compact flex flex-col items-center justify-center text-center transition-base hover:scale-105" style="border: 2px solid var(--primary-400); background: rgba(var(--primary-hue), var(--primary-sat), var(--primary-light), 0.1);">
                 <span class="text-2xl mb-xs">💘</span>
-                <span class="font-bold text-lg">Ficadas</span>
+                <span class="font-bold text-lg">Hooks</span>
                 <span class="text-sm text-secondary">${userFicadas.length} conexões</span>
              </button>
 
@@ -147,7 +147,7 @@ export async function renderDashboard() {
       document.querySelectorAll('.delete-ficada-btn').forEach(btn => {
         btn.addEventListener('click', async (e) => {
           const ficadaId = e.target.dataset.id;
-          if (confirm('Tem certeza que deseja excluir esta ficada?')) {
+          if (confirm('Tem certeza que deseja excluir este Hook?')) {
             e.target.disabled = true;
             e.target.textContent = '⏳';
             await ficadas.delete(ficadaId);
@@ -209,7 +209,7 @@ function renderEmptyState() {
   return `
     <div class="empty-state" style="grid-column: 1 / -1;">
       <div class="empty-state-icon">🎉</div>
-      <h3 class="empty-state-title">Nenhuma ficada ainda</h3>
+      <h3 class="empty-state-title">Nenhum Hook ainda</h3>
       <p class="empty-state-description">
         Comece adicionando suas conexões do Carnaval!
       </p>
@@ -279,7 +279,7 @@ function renderRolosList(list) {
     }
                 <div>
                     <h3 class="font-bold text-lg">${item.name}</h3>
-                    <p class="text-sm text-text-muted">${item.count} ficada${item.count > 1 ? 's' : ''}</p>
+                    <p class="text-sm text-text-muted">${item.count} Hook${item.count > 1 ? 's' : ''}</p>
                 </div>
             </div>
              <div class="text-xs text-secondary bg-secondary/10 px-2 py-1 rounded-full">
